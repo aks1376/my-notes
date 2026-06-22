@@ -1,6 +1,6 @@
 # config SSH
 
-## add user to ssh config
+## Add user to ssh config
 
 ### Create User
 
@@ -188,6 +188,29 @@ ssh -L 8080:localhost:80 Alex@server-ip
 
 ```bash
 ssh -R 2222:localhost:22 Alex@server-ip
+```
+
+## Client ssh config file
+```
+Host localserver
+     HostName 192.168.1.50
+     User alex
+     IdentityFile ~/.ssh/id_ed25519
+     Port 2222
+     Compression yes
+
+     # password only
+     PubkeyAuthentication no
+     PreferredAuthentications password
+
+     # Expose a remote service locally
+     LocalForward 1433 localhost:1433
+
+     # Expose a local service on the remote server
+     RemoteForward 8080 localhost:3000
+
+     # Dynamic forwarding (-D)
+     DynamicForward 8080
 ```
 
 
