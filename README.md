@@ -1,1 +1,1 @@
-Here is my Daily notes
+Here is notes
