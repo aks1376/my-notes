@@ -19,3 +19,8 @@ wsl -l -v
 ```cmd
 wsl -d myLinux
 ```
+
+## Delete distro
+```cmd
+wsl --unregister myLinux
+```
