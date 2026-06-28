@@ -39,6 +39,32 @@ source .bashrc
 node --version
 npm -v
 ```
+
+## Global installation
+
+### Move Binary Files
+```bash
+sudo mv node-v24.17.0-linux-x64 /opt/nodejs
+```
+
+### Create symlinks
+```bash
+sudo ln -sf /opt/nodejs/bin/node /usr/local/bin/node
+sudo ln -sf /opt/nodejs/bin/npm /usr/local/bin/npm
+sudo ln -sf /opt/nodejs/bin/npx /usr/local/bin/npx
+```
+
+### Install Global Packages Without Using `sudo`
+To avoid npm permission issues run
+
+```bash
+mkdir -p ~/.npm-global
+npm config set prefix ~/.npm-global
+echo 'export PATH="$HOME/.npm-global/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+## Extra commands
 ### Get npm Cache Location
 
 ```bash
