@@ -12,7 +12,7 @@ wget https://nodejs.org/dist/v24.17.0/node-v24.17.0-linux-x64.tar.xz
 tar -xJvf node-v24.17.0-linux-x64.tar.xz 
 ```
 
-## Install Nodejs Without Root Permission
+## Install Nodejs Without Root Permission ( Current logged in User )
 
 ### Move to Apps direcoty (optional)
 
@@ -39,4 +39,14 @@ source .bashrc
 node --version
 npm -v
 ```
+### Get npm Cache Location
 
+```bash
+npm config get cache
+```
+
+### Get npm Global installation
+
+```bash
+npm root -g
+```
