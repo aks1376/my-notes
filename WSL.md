@@ -24,3 +24,18 @@ wsl -d myLinux
 ```cmd
 wsl --unregister myLinux
 ```
+
+## Isolate Distro
+
+### Disable Auto Mount Windows Drives
+
+Run
+```bash
+sudo vim /etc/wsl.conf
+```
+
+Add
+```
+[automount]
+enabled = false
+```
