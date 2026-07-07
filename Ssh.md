@@ -213,4 +213,17 @@ Host localserver
      DynamicForward 8080
 ```
 
+## Debugging
 
+### Permission denied publickey
+That means your `PasswordAuthentication yes` setting is either not being applied or is being overridden.
+
+Run this command
+```bash
+sudo sshd -T | grep -E 'passwordauthentication|authenticationmethods|pubkeyauthentication|kbdinteractiveauthentication|usepam'
+```
+
+and search `PasswordAuthentication` in ssh directory
+```bash
+grep -R "PasswordAuthentication" /etc/ssh/
+```
